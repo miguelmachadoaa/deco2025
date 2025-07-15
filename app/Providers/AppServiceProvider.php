@@ -26,11 +26,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        $cartRepository = new CartRepository;
+       /* $cartRepository = new CartRepository;
 		view()->share('cart', $cartRepository->carrito());
 		view()->share('categoriasMenu', Categorias::orderBy('titulo', 'asc')->get());
 		view()->share('paquetesMenu', Paquete::where('type', 'itinerario')->get());
 		view()->share('promocionesMenu', Paquete::where('type', 'promocion')->get());
-		view()->share('configuracion', Configuracion::first());
+		view()->share('configuracion', Configuracion::first());*/
     }
 }

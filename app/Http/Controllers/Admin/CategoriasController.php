@@ -62,6 +62,7 @@ class CategoriasController extends Controller
         'titulo'=>$request->titulo,
         'slug'=>Str::slug($request->titulo),
         'descripcion'=>$request->descripcion,
+        'orden'=>$request->orden,
         'imagen'=>$imagen,
         'estatus'=>1,
         'user_id'=>Auth::getUser()->id
@@ -107,6 +108,7 @@ class CategoriasController extends Controller
        $categoria->update([
         'titulo'=>$request->titulo,
         'descripcion'=>$request->descripcion,
+        'orden'=>$request->orden,
         'slug'=>Str::slug($request->titulo),
         'imagen'=>$imagen,
        // 'estatus'=>$request->estatus,

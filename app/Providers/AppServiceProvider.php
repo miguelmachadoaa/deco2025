@@ -28,9 +28,8 @@ class AppServiceProvider extends ServiceProvider
 
         $cartRepository = new CartRepository;
 		view()->share('cart', $cartRepository->carrito());
-		view()->share('categoriasMenu', Categorias::orderBy('titulo', 'asc')->get());
-		view()->share('paquetesMenu', Paquete::where('type', 'itinerario')->get());
-		view()->share('promocionesMenu', Paquete::where('type', 'promocion')->get());
+
+		view()->share('categoriasMenu', Categorias::orderBy('orden')->get());
 		view()->share('configuracion', Configuracion::first());
     }
 }

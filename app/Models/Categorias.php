@@ -21,6 +21,7 @@ class Categorias extends Authenticatable
         'imagen',
         'estatus',
         'categoria_padre_id',
+        'orden',
         'user_id'
     ];
 

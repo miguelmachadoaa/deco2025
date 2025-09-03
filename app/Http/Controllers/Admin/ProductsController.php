@@ -72,8 +72,8 @@ class ProductsController extends Controller
         'user_id'=>'1'
        ]);
 
-      $producto->colors()->sync($request->input('colors', []));
-      $producto->materials()->sync($request->input('materials', []));
+      $producto->colores()->sync($request->input('colors', []));
+      $producto->materiales()->sync($request->input('materials', []));
 
        ProductosImagenes::where('id_producto', $request->id_product)->update(['id_producto'=>$producto->id]);
 
@@ -138,8 +138,8 @@ class ProductsController extends Controller
         'user_id'=>'1'
        ]);
 
-       $producto->colors()->sync($request->input('colors', []));
-      $producto->materials()->sync($request->input('materials', []));
+       $producto->colores()->sync($request->input('colors', []));
+      $producto->materiales()->sync($request->input('materials', []));
 
        CategoriasProductos::where('producto_id', $producto->id)->delete();
 

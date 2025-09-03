@@ -58,6 +58,20 @@
                 </div>
 
                 <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label input__label">Orden</label>
+                      <div class="col-sm-10">
+                          <input
+                          required
+                          type="text"
+                          class="form-control input-style"
+                          id="orden"
+                          name="orden"
+                          value="{{$categoria->orden}}"
+                          placeholder="Orden">
+                      </div>
+                </div>
+
+                <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label input__label">Imagen de la categoria</label>
                     <div class="col-sm-10">
                         <input class="form-control" id="myfile" name="myfile" type="file" >
@@ -72,8 +86,8 @@
 
                   <div class="form-group row">
                       <div class="col-sm-10">
-                          <button type="submit" class="btn btn-primary btn-style">Crear</button>
-                          <a type="button" class="btn btn-danger btn-style">Volver</a>
+                          <button type="submit" class="btn btn-primary btn-style">Actualizar</button>
+                          <a href="{{url('admin/categorias')}}" class="btn btn-info btn-style">Volver</a>
                       </div>
                   </div>
               </form>

@@ -59,6 +59,19 @@
                     </div>
                 </div>
 
+                <div class="form-group row">
+                      <label for="inputEmail3" class="col-sm-2 col-form-label input__label">Orden</label>
+                      <div class="col-sm-10">
+                          <input
+                          required
+                          type="text"
+                          class="form-control input-style"
+                          id="orden"
+                          name="orden"
+                          placeholder="Orden">
+                      </div>
+                </div>
+
 
 
             <div class="form-group row">
@@ -72,7 +85,7 @@
                 <div class="form-group row">
                       <div class="col-sm-10">
                           <button type="submit" class="btn btn-primary btn-style">Crear</button>
-                          <a href="{{url('admin/products')}}" class="btn btn-info btn-style">Volver</a>
+                          <a href="{{url('admin/categorias')}}" class="btn btn-info btn-style">Volver</a>
                       </div>
                   </div>
               </form>

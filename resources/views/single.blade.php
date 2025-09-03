@@ -67,35 +67,25 @@
                         <div class="mb-3">
                             <label class="form-label">Colores disponibles:</label>
                             <div class="d-flex gap-2">
-                                <input type="radio" class="btn-check" name="color" id="color-rojo" autocomplete="off" checked>
-                                <label class="btn rounded-circle border" for="color-rojo" style="width: 40px; height: 40px; background-color: #d9534f;"></label>
-
-                                <input type="radio" class="btn-check" name="color" id="color-azul" autocomplete="off">
-                                <label class="btn rounded-circle border" for="color-azul" style="width: 40px; height: 40px; background-color: #0275d8;"></label>
-
-                                <input type="radio" class="btn-check" name="color" id="color-verde" autocomplete="off">
-                                <label class="btn rounded-circle border" for="color-verde" style="width: 40px; height: 40px; background-color: #5cb85c;"></label>
-
-                                <input type="radio" class="btn-check" name="color" id="color-negro" autocomplete="off">
-                                <label class="btn rounded-circle border" for="color-negro" style="width: 40px; height: 40px; background-color: #000;"></label>
+                                @foreach($producto->colores as $color)
+                                    <input type="radio" class="btn-check" name="color" id="color-{{ $color->slug }}" autocomplete="off" {{ $loop->first ? 'checked' : '' }}>
+                                    <label class="btn rounded-circle border" for="color-{{ $color->slug }}" style="width: 40px; height: 40px; background-color: {{ $color->hex }};"></label>
+                                @endforeach
+                                
                             </div>
                         </div>
 
                         <!-- Selector de Material -->
                         <div class="mb-3">
                             <label class="form-label">Materiales disponibles:</label>
+
                             <div class="d-flex flex-wrap gap-2">
-                                <input type="radio" class="btn-check" name="material" id="material-tela" autocomplete="off" checked>
-                                <label class="btn btn-outline-secondary" for="material-tela">Tela</label>
 
-                                <input type="radio" class="btn-check" name="material" id="material-aluminio" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="material-aluminio">Aluminio</label>
+                                @foreach($producto->materiales as $material)
+                                    <input type="radio" class="btn-check" name="material" id="material-{{ $material->slug }}" autocomplete="off" {{ $loop->first ? 'checked' : '' }}>
+                                    <label class="btn btn-outline-secondary" for="material-{{ $material->slug }}">{{ $material->nombre }}</label>
+                                @endforeach
 
-                                <input type="radio" class="btn-check" name="material" id="material-pvc" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="material-pvc">PVC</label>
-
-                                <input type="radio" class="btn-check" name="material" id="material-madera" autocomplete="off">
-                                <label class="btn btn-outline-secondary" for="material-madera">Madera</label>
                             </div>
                         </div>
 
@@ -123,7 +113,6 @@
                     <a class="nav-link active"  href="#home" aria-controls="home" role="tab" data-toggle="tab">Caracteristcas</a>
                     <a class="nav-link" href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Condiciones</a>
                     <a class="nav-link" href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Detalles</a>
-                    <a class="nav-link disabled">Disabled</a>
                 </nav>
                     <!-- Nav tabs -->
                    
@@ -131,13 +120,13 @@
                     <!-- Tab panes -->
                     <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="home">
-                    <p> {!! $producto->caracteristicas !!}</p>
+                    <p style="padding-top: 1em; padding-bottom:1em;"> {!! $producto->caracteristicas !!}</p>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="profile">
-                    <p> {!! $producto->Condiciones !!}.</p>
+                    <p style="padding-top: 1em; padding-bottom:1em;"> {!! $producto->condiciones !!}.</p>
                     </div>
                     <div role="tabpanel" class="tab-pane" id="messages">
-                        {!! $producto->descripcion !!}
+                       <p style="padding-top: 1em; padding-bottom:1em;">{!! $producto->descripcion !!}</p> 
                     </div>
                     </div>
                 </div>

@@ -69,10 +69,7 @@
 
 	<link rel="stylesheet" href="{{url('frontend/assets/css/style-starter.css')}}">
 	<link rel="stylesheet" href="{{url('frontend/assets/css/font-awesome.min.css')}}">
-	<link rel="stylesheet" href="{{url('frontend/assets/css/fontawesome-all.min.css')}}">
-	<link rel="stylesheet" href="{{url('frontend/assets/css/gg-icon.css')}}">
-	<link rel="stylesheet" href="{{url('frontend/assets/css/gg-sun.css')}}">
-	<link rel="stylesheet" href="{{url('frontend/assets/css/gg-moon.css')}}">
+	
 	<style type="text/css">
 
 		.questrial-regular {
@@ -118,10 +115,8 @@
 			display: block;
 			margin: 0 auto;
 			}
-
 		
 	</style>
-
 
   </head>
   <body id="home">
@@ -130,7 +125,7 @@
 	<header id="site-header" class="fixed-top">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark stroke">
-				<h1><a class="navbar-brand" href="{{url('/')}}">
+				<h1><a class="navbar-brand mt-1" href="{{url('/')}}">
 					<img src="{{url('images/logo_150.png')}}" alt="MigTours">
 				</a></h1>
 				<!-- if logo is image enable this   
@@ -144,7 +139,7 @@
 				</button>
 	  
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-					<ul class="navbar-nav ml-lg-5">
+					<ul class="navbar-nav ml-lg-5 mb-4">
 
 						<li class="nav-item  ">
 							<a class="nav-link libre-baskerville-regular" href="{{url('/')}}">Inicio</a>
@@ -172,7 +167,7 @@
 						</li>
 
 					</ul>
-						<ul class="navbar-nav ml-auto">
+						<ul class="navbar-nav ml-auto mb-4">
 								<li class="nav-item ml-4">
 									<a class="nav-link phone libre-baskerville-regular" ><span class="fa fa-phone"></span> {{$configuracion->whatsapp}}</a>
 								</li>

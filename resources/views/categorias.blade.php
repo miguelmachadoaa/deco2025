@@ -10,7 +10,7 @@
                 <li class="right-side propClone"><a href="{{url('/')}}" class="editContent">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a> <p></li>
                 <li class="active editContent">{{$categoria->titulo}}</li>
             </ul>
-            <p class="text-white">{!! $categoria->descripcion !!}</p>
+           
             </div>
 </div>
 </div>
@@ -19,10 +19,15 @@
 
 @include('productos_list')
 
+
+@if($blogs->count() > 0)
+
 <!-- blog block -->
 <section class="w3l-services-6">
   <div class="services-layout editContent">
     <div class="container">
+
+    <h3 class="header-name">{{__('Consejos y Recomendaciones')}} </h3>
     <div class="blog-grids row">
 
         @foreach($blogs as $blog)
@@ -35,7 +40,12 @@
               <h3><a href="{{url('blog/'.$blog->slug)}}">
                 {{$blog->titulo}}</a> </h3>
                 <div class="blog-date">  <p class="pos-date"><span class="fa fa-clock-o mr-1"></span>{{$blog->updated_at->format('d/m/Y')}}</p> 
-                  <p class="pos-date"><span class="fa fa-open-eye mr-1"></span>{{$blog->views}} </p></div>
+                  <p class="pos-date">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-eye">
+                      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+{{$blog->views}} </p></div>
             </div>
         </div>
   
@@ -46,5 +56,7 @@
     </div>
   </div>
 </section>
+
+@endif
        
 @include('partials.footer')
